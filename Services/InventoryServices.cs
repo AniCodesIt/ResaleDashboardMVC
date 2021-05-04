@@ -15,7 +15,7 @@ namespace ResaleDashboardMVC.Services
         {
             return _db.Inventories.ToList();
         }
-        public bool InventoryCreate(InventoryCreate model)
+        public bool InventoryCreate(SaleCreate model)
         {
             var entity =
                 new Inventory()
@@ -32,12 +32,51 @@ namespace ResaleDashboardMVC.Services
                     Location = model.Location
                 };
             _db.Inventories.Add(entity); 
-
-            if(_db.SaveChanges() == 1)
-            {
-
-            }
+           
             return _db.SaveChanges() == 1;
         }
+        public InventoryEdit InventoryFind(int ID)
+        {
+            var entity = _db.Inventories.SingleOrDefault(e => e.InvID == ID);
+            var model = new InventoryEdit()
+            {
+                InvID = entity.InvID,
+                Brand = entity.Brand,
+                Category = entity.Category,
+                Color = entity.Color,
+                Size = entity.Size,
+                Description = entity.Description,
+                Source = entity.Source,
+                COG = entity.COG,
+                StockOnHand = entity.StockOnHand,
+                Location = entity.Location
+            };
+            return model;
+        }
+        public bool InventoryEdit(InventoryEdit model)
+        {         
+            
+           var entity = _db.Inventories.SingleOrDefault(e => e.InvID == model.InvID);
+            entity.Brand = model.Brand;
+            entity.Category = model.Category;
+            entity.Color = model.Color;
+            entity.Size = model.Size;
+            entity.Description = model.Description;
+            entity.Source = model.Source;
+            entity.COG = model.COG;
+            entity.StockOnHand = model.StockOnHand;
+            entity.Location = model.Location;          
+
+
+            return _db.SaveChanges() == 1;         
+        }
+        public bool InventoryDelete(int ID)
+        {
+      
+            var entity = _db.Inventories.SingleOrDefault(e => e.InvID == ID);
+            _db.Inventories.Remove(entity);
+            return _db.SaveChanges() == 1;
+        }    
+
     }
 }

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<ResaleDashboardMVC.Models.InventoryListItem>
+@{
+    ViewBag.Title = "InventoryIndex";
+}
+
+<h2>Inventory Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Inventory Item", "Create")
+</p>
+<div class="note-board">
+    @foreach (var item in Model)
+    {
+        <div class="card-container col-md-3 col-sm-6">
+            <div class="note-card">
+                <div class="note-head text-center">
+                    @Html.DisplayFor(x => item.InvID)
+                    <div class="note-body">
+                        <div class="note-category text-center">
+                            @Html.DisplayFor(x => item.Brand)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.Category)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.Size)
+                        </div><div>
+                            @Html.DisplayFor(x => item.Description)
+                        </div>
+                        <div class="note-tools">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.InvID })
+                            @Html.ActionLink("Details", "Details", new { id = item.InvID })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.InvID })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InvID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockOnHand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => item.InvID)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.COG)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.StockOnHand)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.InvID })
+                @Html.ActionLink("Details", "Details", new { id = item.InvID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.InvID })
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+@{
+    ViewBag.Title = "InventoryListItem";
+}
+
+<h2>InventoryListItem</h2>
+

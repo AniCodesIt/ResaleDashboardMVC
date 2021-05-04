@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResaleDashboardMVC", "ResaleDashboardMVC\ResaleDashboardMVC.csproj", "{121B4C45-F299-4CDB-A8C8-C6745A42A758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResaleDashboardMVC.WebMVC", "ResaleDashboardMVC\ResaleDashboardMVC.WebMVC.csproj", "{121B4C45-F299-4CDB-A8C8-C6745A42A758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{B3896C3D-2907-459A-A105-3590E11466A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResaleDashboardMVC.Data", "Data\ResaleDashboardMVC.Data.csproj", "{B3896C3D-2907-459A-A105-3590E11466A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{36896CF4-26DD-4C26-8BDD-FE898E6CF94E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResaleDashboardMVC.Services", "Services\ResaleDashboardMVC.Services.csproj", "{36896CF4-26DD-4C26-8BDD-FE898E6CF94E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{C1925856-C796-4204-B2F6-BAAC81058AC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResaleDashboardMVC.Models", "Models\ResaleDashboardMVC.Models.csproj", "{C1925856-C796-4204-B2F6-BAAC81058AC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

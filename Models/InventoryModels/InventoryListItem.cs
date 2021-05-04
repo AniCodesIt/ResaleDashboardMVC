@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResaleDashbaordMVC.Models
+namespace ResaleDashboardMVC.Models
 {
    public class InventoryListItem
     {

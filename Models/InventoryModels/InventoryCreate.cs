@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ResaleDashboardMVC.Models
 {
-    public class InventoryCreate
+    public class SaleCreate
     {
         public string Brand { get; set; }
         public string Category { get; set; }
