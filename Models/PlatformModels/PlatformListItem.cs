@@ -9,7 +9,7 @@ namespace Models.PlatformModels
     public class PlatformListItem
     {
         public int PlatformID { get; set; }
-        public int PlatformName { get; set; }
+        public string PlatformName { get; set; }
         public decimal Fees { get; set; }
     }
 }

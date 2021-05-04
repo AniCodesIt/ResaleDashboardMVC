@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace ResaleDashboardMVC.Services
 {
     public class SaleServices
     {

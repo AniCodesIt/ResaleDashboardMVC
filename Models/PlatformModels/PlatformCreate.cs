@@ -8,7 +8,7 @@ namespace Models.PlatformModels
 {
     public class PlatformCreate
     {
-        public int PlatformName { get; set; }
+        public string PlatformName { get; set; }
         public decimal Fees { get; set; }
     }
 }
