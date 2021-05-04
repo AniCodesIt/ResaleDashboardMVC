@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using ResaleDashboardMVC.Data;
 using ResaleDashboardMVC.Models;
 
 namespace ResaleDashboardMVC.Controllers
@@ -142,7 +143,6 @@ namespace ResaleDashboardMVC.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -193,7 +193,7 @@ namespace ResaleDashboardMVC.Controllers
             return View();
         }
 
-        //
+       
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]

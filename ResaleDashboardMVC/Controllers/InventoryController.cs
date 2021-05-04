@@ -1,7 +1,6 @@
 ﻿using ResaleDashboardMVC.Data;
 using ResaleDashboardMVC.Models;
 using ResaleDashboardMVC.Services;
-using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +28,7 @@ namespace ResaleDashboardMVC.Controllers
         }
         //Post: Category/Create
         [HttpPost]
-        public ActionResult Create(SaleCreate model)
+        public ActionResult Create(InventoryCreate model)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -37,23 +36,19 @@ namespace ResaleDashboardMVC.Controllers
             {
                 return RedirectToAction("Index");
             }
-            ModelState.AddModelError("", "Inventory could not be added. Please try again.");
+            ModelState.AddModelError("", "Your inventory item could not be added. Please try again. ");
             return View(model);
         }
         // Get: Inventory/Edit{id}
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
-            }
-          
-            if (inventory == null)
+            
+          InventoryEdit inv = invServ.InventoryFind(id);
+            if (inv == null)
             {
                 return HttpNotFound();
             }
-            return View(inventory);
+            return View(inv);
         }
         //POST: Inventory/Edit{id}
         [HttpPost]
@@ -66,5 +61,41 @@ namespace ResaleDashboardMVC.Controllers
             }
             return View(inventory);
         }
+        //// Post: Inventory/Delete{id}
+        //[HttpPost, ActionName("Delete")]
+        ////[ValidateAntiForgeryToken]
+        //public ActionResult Delete(int id)
+        //{
+        //    bool delete  = invServ.InventoryDelete(id);
+        //    if(delete == true)
+        //    {
+        //        return RedirectToAction("Index");
+        //    }
+        //    ModelState.AddModelError("", "Your inventory item was not deleted. Please try again. ");
+        //    return View(id);
+
+        //}
+        //Get: Inventory/Delete/{id}
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {            
+            var model = invServ.InventoryFind(id);
+            return View(model);
+        }
+
+        //Post: Inventory/Delete/{id}
+        [HttpPost]
+        [ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        public ActionResult DeleteInv(int id)
+        {        
+
+            invServ.InventoryDelete(id);
+
+            //Feeling cute, might delete this later
+            TempData["SaveResult"] = "Your inventory item was deleted";
+
+            return RedirectToAction("Index");
+        }       
     }
 }
