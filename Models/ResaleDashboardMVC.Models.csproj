@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="InventoryModels\InventoryEdit.cs" />
     <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="InventoryModels\InventoryDetail.cs" />

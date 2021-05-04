@@ -1,4 +1,5 @@
-﻿using ResaleDashboardMVC.Data;
+﻿using Models.SaleModels;
+using ResaleDashboardMVC.Data;
 using ResaleDashboardMVC.Models;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,12 @@ namespace Services
         {
             var entity =
                 new Sale()
-                {
-
-                 
-                    PlatformID = model
-                  
+                {                
+                    PlatformID = model.PlatformID,
+                    InvID = model.InvID,
+                    SaleDate = model.SaleDate,
+                    SalePrice = model.SalePrice,
+                    Profit = model.Profit                  
                 };
             _db.Sales.Add(entity);
 
@@ -31,43 +33,32 @@ namespace Services
         }
         public SaleEdit SaleFind(int ID)
         {
-            var entity = _db.Sales.SingleOrDefault(e => e.InvID == ID);
+            var entity = _db.Sales.SingleOrDefault(e => e.SaleID == ID);
             var model = new SaleEdit()
             {
+                PlatformID = entity.PlatformID,
                 InvID = entity.InvID,
-                Brand = entity.Brand,
-                Category = entity.Category,
-                Color = entity.Color,
-                Size = entity.Size,
-                Description = entity.Description,
-                Source = entity.Source,
-                COG = entity.COG,
-                StockOnHand = entity.StockOnHand,
-                Location = entity.Location
+                SaleDate = entity.SaleDate,
+                SalePrice = entity.SalePrice,
+                Profit = entity.Profit
             };
             return model;
         }
-        public bool InventoryEdit(InventoryEdit model)
+        public bool SaleEdit(SaleEdit model)
         {
-
-            var entity = _db.Sales.SingleOrDefault(e => e.InvID == model.InvID);
-            entity.Brand = model.Brand;
-            entity.Category = model.Category;
-            entity.Color = model.Color;
-            entity.Size = model.Size;
-            entity.Description = model.Description;
-            entity.Source = model.Source;
-            entity.COG = model.COG;
-            entity.StockOnHand = model.StockOnHand;
-            entity.Location = model.Location;
-
+            var entity = _db.Sales.SingleOrDefault(e => e.SaleID == model.SaleID);           
+            entity.PlatformID = model.PlatformID;
+            entity.InvID = model.InvID;
+            entity.SaleDate = model.SaleDate;
+            entity.SalePrice = model.SalePrice;
+            entity.Profit = model.Profit;
 
             return _db.SaveChanges() == 1;
         }
-        public bool InventoryDelete(int ID)
+        public bool SaleDelete(int ID)
         {
 
-            var entity = _db.Sales.SingleOrDefault(e => e.InvID == ID);
+            var entity = _db.Sales.SingleOrDefault(e => e.SaleID == ID);
             _db.Sales.Remove(entity);
             return _db.SaveChanges() == 1;
         }

@@ -11,8 +11,8 @@ namespace Models.SaleModels
         public int SaleID { get; set; }
         public int PlatformID { get; set; }
         public int InvID { get; set; }
-        public int SaleDate { get; set; }
-        public int SalePrice { get; set; }
-        public int Profit { get; set; }
+        public DateTime SaleDate { get; set; }
+        public decimal SalePrice { get; set; }
+        public decimal Profit { get; set; }
     }
 }

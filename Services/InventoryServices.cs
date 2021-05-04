@@ -15,7 +15,7 @@ namespace ResaleDashboardMVC.Services
         {
             return _db.Inventories.ToList();
         }
-        public bool InventoryCreate(SaleCreate model)
+        public bool InventoryCreate(InventoryCreate model)
         {
             var entity =
                 new Inventory()
