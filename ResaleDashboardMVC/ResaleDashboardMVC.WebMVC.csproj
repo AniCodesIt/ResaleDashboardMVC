@@ -349,11 +349,17 @@
     <Content Include="Views\Inventory\InventoryDetails.cshtml" />
     <Content Include="Views\Inventory\InventoryEdit.cshtml" />
     <Content Include="Views\Inventory\InventoryListItem.cshtml" />
+    <Content Include="Views\Platform\PlatformCreate.cshtml" />
+    <Content Include="Views\Platform\PlatformEdit.cshtml" />
+    <Content Include="Views\Platform\PlatformDetails.cshtml" />
+    <Content Include="Views\Platform\PlatformListItem.cshtml" />
+    <Content Include="Views\Sale\SaleEdit.cshtml" />
+    <Content Include="Views\Sale\SaleCreate.cshtml" />
+    <Content Include="Views\Sale\SaleListItem.cshtml" />
+    <Content Include="Views\Sale\SaleDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Platform\" />
-    <Folder Include="Views\Sale\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

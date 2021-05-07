@@ -1,4 +1,4 @@
-﻿using Models.SaleModels;
+﻿using ResaleDashboardMVC.Models.SaleModels;
 using ResaleDashboardMVC.Data;
 using ResaleDashboardMVC.Models;
 using System;

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ResaleDashboardMVC.Models.SaleListItem>
+@{
+    ViewBag.Title = "SaleIndex";
+}
+
+<h2>Sale Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Sale", "Create")
+</p>
+<div class="note-board">
+    @foreach (var item in Model)
+    {
+        <div class="card-container col-md-3 col-sm-6">
+            <div class="note-card">
+                <div class="note-head text-center">
+                    @Html.DisplayFor(x => item.SaleID)
+                    <div class="note-body">
+                        <div class="note-category text-center">
+                            @Html.DisplayFor(x => item.SaleID)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.PlatformID)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.InvID)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.SaleDate)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.SalePrice)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.Profit)
+                        </div>
+                    </div>
+                    <div class="note-tools">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SaleID })
+                        @Html.ActionLink("Details", "Details", new { id = item.SaleID })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SaleID })
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    }
+
+</div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlatformID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profit)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => item.SaleID)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.PlatformID)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.InvID)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.SaleDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.SalePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.Profit)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SaleID })
+                    @Html.ActionLink("Details", "Details", new { id = item.SaleID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SaleID })
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+
+

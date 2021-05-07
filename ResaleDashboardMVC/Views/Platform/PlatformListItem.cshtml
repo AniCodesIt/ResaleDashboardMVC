@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ResaleDashboardMVC.Models.PlatformListItem>
+@{
+    ViewBag.Title = "PlatformIndex";
+}
+
+<h2>Platform Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Platform", "Create")
+</p>
+<div class="note-board">
+    @foreach (var item in Model)
+    {
+        <div class="card-container col-md-3 col-sm-6">
+            <div class="note-card">
+                <div class="note-head text-center">
+                    @Html.DisplayFor(x => item.PlatformID)
+                    <div class="note-body">
+                        <div class="note-category text-center">
+                            @Html.DisplayFor(x => item.PlatformID)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.PlatformName)
+                        </div>
+                        <div>
+                            @Html.DisplayFor(x => item.Fees)
+                        </div>
+                        <div class="note-tools">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PlatformID })
+                            @Html.ActionLink("Details", "Details", new { id = item.PlatformID })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PlatformID })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlatformID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlatformName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fees)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => item.PlatformID)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.PlatformName)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Fees)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PlatformID })
+                @Html.ActionLink("Details", "Details", new { id = item.PlatformID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.PlatformID })
+            </td>
+        </tr>
+    }
+</table>
+
+
