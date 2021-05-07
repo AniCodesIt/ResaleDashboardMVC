@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ResaleDashboardMVC.Startup))]
-namespace ResaleDashboardMVC
+[assembly: OwinStartupAttribute(typeof(FusionCharts.Samples.Models.Startup))]
+namespace FusionCharts.Samples.Models
 {
     public partial class Startup
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResaleDashboardMVC.Models
+namespace FusionCharts.Samples.Models.Models
 {
     public class InventoryEdit
     {

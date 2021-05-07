@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
-namespace ResaleDashboardMVC.Models
+namespace FusionCharts.Samples.Models.Models
 {
     internal class IdentityUserLoginConfiguration : EntityTypeConfiguration<object>
     {

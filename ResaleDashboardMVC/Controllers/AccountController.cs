@@ -8,10 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ResaleDashboardMVC.Data;
-using ResaleDashboardMVC.Models;
+using FusionCharts.Samples.Models.Data;
+using FusionCharts.Samples.Models.Models;
 
-namespace ResaleDashboardMVC.Controllers
+namespace FusionCharts.Samples.Models.Controllers
 {
     [Authorize]
     public class AccountController : Controller

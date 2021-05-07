@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ResaleDashboardMVC
+namespace FusionCharts.Samples.Models
 {
     public class BundleConfig
     {

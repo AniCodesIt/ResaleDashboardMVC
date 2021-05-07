@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace ResaleDashboardMVC.Models
+namespace FusionCharts.Samples.Models.Models
 {
     public class IndexViewModel
     {

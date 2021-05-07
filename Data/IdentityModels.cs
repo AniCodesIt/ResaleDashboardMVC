@@ -3,12 +3,12 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using ResaleDashboardMVC.Data;
+using FusionCharts.Samples.Models.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 
-namespace ResaleDashboardMVC.Models
+namespace FusionCharts.Samples.Models.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     //This was originally in class ApplicationDBContext.  It was moved here and the file excluded from the project.

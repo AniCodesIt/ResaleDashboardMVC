@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ResaleDashboardMVC.Data
+namespace FusionCharts.Samples.Models.Data
 { 
         public class Inventory
         {

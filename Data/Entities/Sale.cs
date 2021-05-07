@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ResaleDashboardMVC.Data
+namespace FusionCharts.Samples.Models.Data
 {
     public class Sale
     {

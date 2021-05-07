@@ -1,6 +1,6 @@
-﻿using ResaleDashboardMVC.Data;
-using ResaleDashboardMVC.Models;
-using ResaleDashboardMVC.Services;
+﻿using FusionCharts.Samples.Models.Data;
+using FusionCharts.Samples.Models.Models;
+using FusionCharts.Samples.Models.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ResaleDashboardMVC.Controllers
+namespace FusionCharts.Samples.Models.Controllers
 {
     public class InventoryController : Controller
     {

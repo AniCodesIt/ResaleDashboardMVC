@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ResaleDashboardMVC.Models;
-using ResaleDashboardMVC.Data;
+using FusionCharts.Samples.Models.Models;
+using FusionCharts.Samples.Models.Data;
 
-namespace ResaleDashboardMVC.Services
+namespace FusionCharts.Samples.Models.Services
 {
     public class InventoryServices
     {

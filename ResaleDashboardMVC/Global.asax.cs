@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ResaleDashboardMVC
+namespace FusionCharts.Samples.Models
 {
     public class MvcApplication : System.Web.HttpApplication
     {

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FusionChartModels\FusionChartRun.cs" />
     <Compile Include="InventoryModels\InventoryEdit.cs" />
     <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="InventoryModels\InventoryDetail.cs" />

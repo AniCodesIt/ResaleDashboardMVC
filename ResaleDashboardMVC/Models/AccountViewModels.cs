@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ResaleDashboardMVC.Models
+namespace FusionCharts.Samples.Models.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

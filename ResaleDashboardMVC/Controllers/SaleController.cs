@@ -1,13 +1,13 @@
 ﻿using Models.SaleModels;
-using ResaleDashboardMVC.Data;
-using ResaleDashboardMVC.Services;
+using FusionCharts.Samples.Models.Data;
+using FusionCharts.Samples.Models.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ResaleDashboardMVC.Controllers
+namespace FusionCharts.Samples.Models.Controllers
 {
     public class SaleController : Controller
     {

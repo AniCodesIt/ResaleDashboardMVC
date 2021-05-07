@@ -5,10 +5,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using ResaleDashboardMVC.Data;
-using ResaleDashboardMVC.Models;
+using FusionCharts.Samples.Models.Data;
+using FusionCharts.Samples.Models.Models;
 
-namespace ResaleDashboardMVC
+namespace FusionCharts.Samples.Models
 {
     public partial class Startup
     {

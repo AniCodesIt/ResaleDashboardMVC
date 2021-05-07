@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResaleDashboardMVC.Data
+namespace FusionCharts.Samples.Models.Data
 {
     public class ApplicationUser : IdentityUser
     {

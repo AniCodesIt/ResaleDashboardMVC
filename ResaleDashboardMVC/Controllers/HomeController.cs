@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
-namespace ResaleDashboardMVC.Controllers
+namespace FusionCharts.Samples.Models.Controllers
 {
     public class HomeController : Controller
     {
@@ -25,6 +26,19 @@ namespace ResaleDashboardMVC.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult MyChart()
+        {
+            new Chart(width: 600, height: 400)
+
+            .AddSeries(
+                chartArea: "column",
+                xValue: new[] { "Peter", "Andrew", "Julie", "Mary", "Dave" },
+                yValues: new[] { "2", "6", "4", "5", "3" })
+            .Write("png");
+            return null;
+             
         }
     }
 }
