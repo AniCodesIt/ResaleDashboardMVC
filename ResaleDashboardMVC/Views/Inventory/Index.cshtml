@@ -1,4 +1,4 @@
-﻿@model List<ResaleDashboardMVC.Models.InventoryListItem>
+﻿@model IEnumerable<ResaleDashboardMVC.Models.InventoryListItem>
 @{
     ViewBag.Title = "Index";
 }
@@ -8,7 +8,7 @@
 <p>
     @Html.ActionLink("Create New Inventory Item", "Create")
 </p>
-<div class="note-board">
+@*<div class="note-board">
     @foreach (var item in Model)
     {
         <div class="card-container col-md-3 col-sm-6">
@@ -37,7 +37,7 @@
             </div>
         </div>
     }
-</div>
+</div>*@
 <table class="table">
     <tr>
         <th>
@@ -68,7 +68,13 @@
             @Html.DisplayNameFor(model => model.Location)
         </th>
         <th></th>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.InvID })
+            @Html.ActionLink("Details", "Details", new { id = item.InvID })
+            @Html.ActionLink("Delete", "Delete", new { id = item.InvID })*@
+        </td>
     </tr>
+<table class="table">
     @foreach (var item in Model)
     {
         <tr>
@@ -110,9 +116,9 @@
 
 
 
-@{
+@*@{
     ViewBag.Title = "InventoryListItem";
 }
 
-<h2>InventoryListItem</h2>
+<h2>InventoryListItem</h2>*@
 

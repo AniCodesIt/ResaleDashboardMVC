@@ -70,7 +70,45 @@ namespace ResaleDashboardMVC.Services
             };
             return model;
         }
-        public bool InventoryEdit(InventoryEdit model)
+        public InventoryDelete InventoryDeleteFind(int ID)
+        {
+            var entity = _db.Inventories.SingleOrDefault(e => e.InvID == ID);
+            var model = new InventoryDelete()
+            {
+                InvID = entity.InvID,
+                Brand = entity.Brand,
+                Category = entity.Category,
+                Color = entity.Color,
+                Size = entity.Size,
+                Description = entity.Description,
+                Source = entity.Source,
+                COG = entity.COG,
+                StockOnHand = entity.StockOnHand,
+                Location = entity.Location
+            };
+            return model;
+        }
+
+        public InventoryDetail InventoryDetails(int ID)
+            {
+                var entity = _db.Inventories.SingleOrDefault(e => e.InvID == ID);
+                var model = new InventoryDetail()
+                {
+                    InvID = entity.InvID,
+                    Brand = entity.Brand,
+                    Category = entity.Category,
+                    Color = entity.Color,
+                    Size = entity.Size,
+                    Description = entity.Description,
+                    Source = entity.Source,
+                    COG = entity.COG,
+                    StockOnHand = entity.StockOnHand,
+                    Location = entity.Location
+                };
+                return model;
+            }
+
+            public bool InventoryEdit(InventoryEdit model)
         {         
             
            var entity = _db.Inventories.SingleOrDefault(e => e.InvID == model.InvID);

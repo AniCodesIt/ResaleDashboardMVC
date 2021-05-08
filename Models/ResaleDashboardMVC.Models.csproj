@@ -41,16 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryModels\InventoryDelete.cs" />
     <Compile Include="InventoryModels\InventoryEdit.cs" />
     <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="InventoryModels\InventoryDetail.cs" />
     <Compile Include="InventoryModels\InventoryListItem.cs" />
     <Compile Include="PlatformModels\PlatformCreate.cs" />
+    <Compile Include="PlatformModels\PlatformDelete.cs" />
     <Compile Include="PlatformModels\PlatformDetail.cs" />
     <Compile Include="PlatformModels\PlatformEdit.cs" />
     <Compile Include="PlatformModels\PlatformListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaleModels\SaleCreate.cs" />
+    <Compile Include="SaleModels\SaleDelete.cs" />
     <Compile Include="SaleModels\SaleDetail.cs" />
     <Compile Include="SaleModels\SaleEdit.cs" />
     <Compile Include="SaleModels\SaleListItem.cs" />
