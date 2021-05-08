@@ -335,7 +335,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Inventory\InventoryCreate.cshtml" />
+    <Content Include="Views\Inventory\Create.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -346,9 +346,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Inventory\InventoryDetails.cshtml" />
-    <Content Include="Views\Inventory\InventoryEdit.cshtml" />
-    <Content Include="Views\Inventory\InventoryListItem.cshtml" />
+    <Content Include="Views\Inventory\Details.cshtml" />
+    <Content Include="Views\Inventory\Edit.cshtml" />
+    <Content Include="Views\Inventory\Index.cshtml" />
     <Content Include="Views\Platform\PlatformCreate.cshtml" />
     <Content Include="Views\Platform\PlatformEdit.cshtml" />
     <Content Include="Views\Platform\PlatformDetails.cshtml" />

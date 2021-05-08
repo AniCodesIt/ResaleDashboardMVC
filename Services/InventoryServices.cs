@@ -11,10 +11,27 @@ namespace ResaleDashboardMVC.Services
     public class InventoryServices
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        public List<Inventory> InventoryIndex()
+        public List<InventoryListItem> InventoryIndex()
         {
-            return _db.Inventories.ToList();
+            return _db.Inventories.Select(e => new InventoryListItem
+            {
+
+                InvID = e.InvID,
+                Brand = e.Brand,
+                Category = e.Category,
+                Color = e.Color,
+                Size = e.Size,
+                Description = e.Description,
+                Source = e.Source,
+                COG = e.COG,
+                StockOnHand = e.StockOnHand,
+                Location = e.Location
+
+
+            }).ToList();           
         }
+     
+       
         public bool InventoryCreate(InventoryCreate model)
         {
             var entity =

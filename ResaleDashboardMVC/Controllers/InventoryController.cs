@@ -18,7 +18,7 @@ namespace ResaleDashboardMVC.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Index()
         {
-            List<Inventory> invList = invServ.InventoryIndex();
+            List<InventoryListItem> invList = invServ.InventoryIndex();
             return View(invList);
         }
         // Get: Inventory/Create
