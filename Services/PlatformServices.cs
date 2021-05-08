@@ -12,9 +12,16 @@ namespace ResaleDashboardMVC.Services
     public class PlatformServices
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        public List<Platform> PlatformIndex()
+        public List<PlatformListItem> PlatformIndex()
         {
-            return _db.Platforms.ToList();
+            return _db.Platforms.Select(e => new PlatformListItem
+            {
+                PlatformID = e.PlatformID,
+                PlatformName = e.PlatformName,
+                Fees = e.Fees
+
+
+            }).ToList();
         }
         public bool PlatformCreate(PlatformCreate model)
         {
@@ -39,6 +46,18 @@ namespace ResaleDashboardMVC.Services
             };
             return model;
         }
+        public PlatformDetail PlatformDetails(int ID)
+        {
+            var entity = _db.Platforms.SingleOrDefault(e => e.PlatformID == ID);
+            var model = new PlatformDetail()
+            {
+                PlatformID = entity.PlatformID,
+                PlatformName = entity.PlatformName,
+                Fees = entity.Fees
+            };              
+                
+            return model;
+        }
         public bool PlatformEdit(PlatformEdit model)
         {
             var entity = _db.Platforms.SingleOrDefault(e => e.PlatformID == model.PlatformID);
@@ -47,6 +66,18 @@ namespace ResaleDashboardMVC.Services
             entity.Fees = model.Fees;       
 
             return _db.SaveChanges() == 1;
+        }
+        public PlatformDelete PlatformDeleteFind(int ID)
+        {
+            var entity = _db.Platforms.SingleOrDefault(e => e.PlatformID == ID);
+            var model = new PlatformDelete()
+            {
+                PlatformID = entity.PlatformID,
+                PlatformName = entity.PlatformName,
+                Fees = entity.Fees,
+             
+            };
+            return model;
         }
         public bool PlatformDelete(int ID)
         {

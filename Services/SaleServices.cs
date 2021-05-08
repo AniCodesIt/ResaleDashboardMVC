@@ -54,6 +54,21 @@ namespace ResaleDashboardMVC.Services
             entity.Profit = model.Profit;
 
             return _db.SaveChanges() == 1;
+        }        
+        public SaleDelete SaleDeleteFind(int ID)
+        {
+            var entity = _db.Sales.SingleOrDefault(e => e.SaleID == ID);
+            var model = new SaleDelete()
+            {
+                SaleID = entity.SaleID,
+                PlatformID = entity.PlatformID,
+                InvID = entity.InvID,
+                SaleDate = entity.SaleDate,
+                SalePrice = entity.SalePrice,
+                Profit = entity.Profit
+
+            };
+            return model;
         }
         public bool SaleDelete(int ID)
         {

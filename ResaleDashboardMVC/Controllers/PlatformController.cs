@@ -18,7 +18,7 @@ namespace ResaleDashboardMVC.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Index()
         {
-            List<Platform> platList = platServ.PlatformIndex();
+            List<PlatformListItem> platList = platServ.PlatformIndex();
             return View(platList);
         }
         // Get: Platform/Create
@@ -53,20 +53,33 @@ namespace ResaleDashboardMVC.Controllers
         //POST: Platform/Edit{id}
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Edit(Platform platform)
+        public ActionResult Edit(PlatformEdit model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return RedirectToAction("Index");
             }
-            return View(platform);
+            if (platServ.PlatformEdit(model))
+            {
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Platform could not be edited");
+            return View(model);
+
         }
-     
+        //Get:Plaform/Details/{id}
+        [ActionName("Details")]
+        public ActionResult Find(int id)
+        {
+            var model = platServ.PlatformDetails(id);
+            return View(model);
+        }
+
         //Get: Platform/Delete/{id}
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var model = platServ.PlatformFind(id);
+            var model = platServ.PlatformDeleteFind(id);
             return View(model);
         }
 

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<ResaleDashboardMVC.Models.SaleListItem>
 @{
-    ViewBag.Title = "SaleIndex";
+    ViewBag.Title = "Index";
 }
 
 <h2>Sale Index</h2>
@@ -8,7 +8,7 @@
 <p>
     @Html.ActionLink("Create New Sale", "Create")
 </p>
-<div class="note-board">
+@*<div class="note-board">
     @foreach (var item in Model)
     {
         <div class="card-container col-md-3 col-sm-6">
@@ -44,7 +44,7 @@
             </div>
         </div>
         
-    }
+    }*@
 
 </div>
     <table class="table">

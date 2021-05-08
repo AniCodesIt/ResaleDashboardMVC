@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<ResaleDashboardMVC.Models.PlatformListItem>
 @{
-    ViewBag.Title = "PlatformIndex";
+    ViewBag.Title = "Index";
 }
 
 <h2>Platform Index</h2>
@@ -8,7 +8,7 @@
 <p>
     @Html.ActionLink("Create New Platform", "Create")
 </p>
-<div class="note-board">
+@*<div class="note-board">
     @foreach (var item in Model)
     {
         <div class="card-container col-md-3 col-sm-6">
@@ -35,7 +35,7 @@
             </div>
         </div>
     }
-</div>
+</div>*@
 <table class="table">
     <tr>
         <th>
