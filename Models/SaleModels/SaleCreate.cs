@@ -11,7 +11,7 @@ namespace ResaleDashboardMVC.Models
         public int PlatformID { get; set; }
         public int InvID { get; set; }
         public DateTime SaleDate { get; set; }
-        public decimal SalePrice { get; set; }
+        public decimal SalePrice { get; set; }        
         public decimal Profit { get; set; }
     }
 }

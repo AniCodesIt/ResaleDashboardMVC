@@ -15,9 +15,10 @@ namespace ResaleDashboardMVC.Controllers
         // GET: Sale
         [HttpGet]
         //[ValidateAntiForgeryToken]
+      
         public ActionResult Index()
         {
-            List<Sale> saleList = saleServ.SaleIndex();
+            List<SaleListItem> saleList = saleServ.SaleIndex();
             return View(saleList);
         }
         // Get: Sale/Create
@@ -52,20 +53,31 @@ namespace ResaleDashboardMVC.Controllers
         //POST: Sale/Edit{id}
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Edit(Sale sale)
+        public ActionResult Edit(SaleEdit model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return RedirectToAction("Index");
             }
-            return View(sale);
+            if (saleServ.SaleEdit(model))
+            {
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Sale could not be edited");
+            return View(model);
         }
-
-        //Get: Sale/Delete/{id}
-        [ActionName("Delete")]
+        //Get:Sale/Details/{id}
+        [ActionName("Details")]
+        public ActionResult Find(int id)
+        {
+            var model = saleServ.SaleDetails(id);
+            return View(model);
+        }
+            //Get: Sale/Delete/{id}
+            [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var model = saleServ.SaleFind(id);
+            var model = saleServ.SaleDeleteFind(id);
             return View(model);
         }
 
