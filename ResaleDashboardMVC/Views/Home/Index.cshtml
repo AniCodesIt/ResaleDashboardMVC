@@ -22,19 +22,19 @@
 
             // Create the data table.
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');
-            data.addColumn('number', 'Slices');
+            data.addColumn('string', 'Platform');
+            data.addColumn('number', 'Number of Sales');
             data.addRows([
-                ['Mushrooms', 3],
-                ['Onions', 1],
-                ['Olives', 1],
-                ['Zucchini', 1],
-                ['Pepperoni', 2]
+                ['Poshmark', 3],
+                ['Ebay', 1],
+                ['Mercari', 1],
+                ['Tradesy', 1],
+                
             ]);
 
             // Set chart options
             var options = {
-                'title': 'How Much Pizza I Ate Last Night',
+                'title': 'Sales By Plaform',
                 'width': 600,
                 'height': 500
             };
