@@ -14,7 +14,7 @@ namespace ResaleDashboardMVC.Controllers
         SaleServices saleServ = new SaleServices();
         // GET: Sale
         [HttpGet]
-        //[ValidateAntiForgeryToken]
+        ////[ValidateAntiForgeryToken]
       
         public ActionResult Index()
         {
@@ -83,8 +83,8 @@ namespace ResaleDashboardMVC.Controllers
 
         //Post: Sale/Delete/{id}
         [HttpPost]
-        [ActionName("Delete")]
         //[ValidateAntiForgeryToken]
+        [ActionName("Delete")]      
         public ActionResult DeleteSale(int id)
         {
             saleServ.SaleDelete(id);

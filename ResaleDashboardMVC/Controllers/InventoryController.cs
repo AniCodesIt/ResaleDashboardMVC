@@ -86,7 +86,7 @@ namespace ResaleDashboardMVC.Controllers
         //Post: Inventory/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
+        ////[ValidateAntiForgeryToken]
         public ActionResult DeleteInv(int id)
         {        
 

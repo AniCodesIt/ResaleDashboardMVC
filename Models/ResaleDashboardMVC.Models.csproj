@@ -51,6 +51,7 @@
     <Compile Include="PlatformModels\PlatformDetail.cs" />
     <Compile Include="PlatformModels\PlatformEdit.cs" />
     <Compile Include="PlatformModels\PlatformListItem.cs" />
+    <Compile Include="PlatformModels\PlatformSalesListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaleModels\SaleCreate.cs" />
     <Compile Include="SaleModels\SaleDelete.cs" />

@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlatformController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="Controllers\VisualizeDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -314,7 +315,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -360,6 +361,10 @@
     <Content Include="Views\Inventory\Delete.cshtml" />
     <Content Include="Views\Platform\Delete.cshtml" />
     <Content Include="Views\Sale\Delete.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\VisualizeData\ColumnChart.cshtml" />
+    <Content Include="Views\VisualizeData\LineChart.cshtml" />
+    <Content Include="Views\VisualizeData\PieChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

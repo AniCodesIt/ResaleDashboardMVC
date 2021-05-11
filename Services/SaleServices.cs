@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ResaleDashboardMVC.Services
 {
     public class SaleServices
@@ -110,6 +111,38 @@ namespace ResaleDashboardMVC.Services
             decimal profit = saleEntity.SalePrice - (saleEntity.SalePrice * platEntity.Fees) - invEntity.COG;
             return profit;
         }
+        public List<PlatformSalesListItem> VisualizeSales()
+        {
+            //public List<SaleListItem> SaleIndex()
+            int index = 0;
+            decimal newTotal = 0;
+            List<SaleListItem> saleVisuals = SaleIndex();
+            List<PlatformSalesListItem> platformVisuals = new List<PlatformSalesListItem>();
+            foreach(SaleListItem sale in saleVisuals)
+            {
+                //index = platformVisuals.Find(p => p.PlatformID == sale.PlatformID)
+                    index = platformVisuals.FindIndex(p => p.PlatformID == sale.PlatformID);
+                if (index == 0)
+                {
+                    PlatformSalesListItem mp = new PlatformSalesListItem();
+                    mp.PlatformID = sale.PlatformID;
+                    mp.SalePrice = sale.SalePrice;
+                    platformVisuals.Add(mp);
+                }
+                else
+                {
+                    //We know what row this platform is on.
+                    //get the SalePrice from that row.
+                    //add the saleprice from this sale to the amount we found above.
+                    //update the row in platformvisuals with the new sales total.
+                    newTotal = platformVisuals[index].SalePrice + sale.SalePrice;
+                    platformVisuals[index].SalePrice = newTotal;
+
+                }
+            }
+                return platformVisuals;
+        }
+
 
     }
 
