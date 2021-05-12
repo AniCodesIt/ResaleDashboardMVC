@@ -1,17 +1,37 @@
-﻿.header {
+﻿header {
     background-color: #F1F1F1;
     text-align: center;
     padding: 20px;
+    background-image: url('Assets/Sweater.jpg')
+}
+h1{
+    text-align: center;
 }
 
 /* The navbar container */
-.topnav {
+nav {
     overflow: hidden;
-    background-color: #333;
+    display: block;
+    padding: 2px;
+    background-color: lightgray;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
 }
+ul li {
+    float: left;
+    display: block;
+    padding: 0;
+    padding-left: 10%; /* Change this value to fit your screen */
+    padding-right: 10%;
+}
+table
+
+
 
     /* Navbar links */
-    .topnav a {
+navbar-header {
         float: left;
         display: block;
         color: #f2f2f2;
@@ -19,46 +39,9 @@
         padding: 14px 16px;
         text-decoration: none;
     }
-/* Create three equal columns that floats next to each other */
-.column {
-    float: center;
-    width: 33.33%;
-}
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
 
-.column {
-    float: left;
-}
-
-    /* Left and right column */
-    .column.side {
-        width: 25%;
-    }
-
-    /* Middle column */
-    .column.middle {
-        width: 50%;
-    }
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column.side, .column.middle {
-        width: 100%;
-    }
-}
 
 body {
     padding-top: 50px;
@@ -67,15 +50,21 @@ body {
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+tr:nth-child(even) {
+    background-color: aliceblue;
+}
+tr:nth-child(odd) {
+    background-color: lightblue;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+dl-horizontal dt {
     white-space: normal;
 }
 
@@ -85,9 +74,10 @@ select,
 textarea {
     max-width: 280px;
 }
-.footer {
+footer {
     background-color: #F1F1F1;
+    font-weight: bolder;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-image: url('Assets/Sweater.jpg')
 }

@@ -27,7 +27,7 @@ namespace ResaleDashboardMVC.Controllers
             return View();
         }
 
-        public ActionResult VisualizeStudentResult()
+        public ActionResult VisualizeResult()
         {
             return Json(Result(), JsonRequestBehavior.AllowGet);
         }
@@ -40,18 +40,22 @@ namespace ResaleDashboardMVC.Controllers
             //stdResult.Add(new SaleListItem()
             //{
 
-            //    stdName = "Atir",
-            //    marksObtained = 88
+            //    stdName = "Poshmark",
+            //    percentage = 35
             //});
             //stdResult.Add(new SaleListItem()
             //{
-            //    stdName = "Qasim",
-            //    marksObtained = 60
+            //    stdName = "Ebay",
+            //    percentage = 30
+            //});  //stdResult.Add(new SaleListItem()
+            //{
+            //    stdName = "Mercari",
+            //    percentage = 20
             //});
             //stdResult.Add(new SaleListItem()
             //{
-            //    stdName = "Hassaan Tahir",
-            //    marksObtained = 77
+            //    stdName = "Tradesy",
+            //    percentage = 15
             //});
 
 
