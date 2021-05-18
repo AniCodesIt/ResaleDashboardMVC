@@ -58,6 +58,7 @@
     <Compile Include="SaleModels\SaleDetail.cs" />
     <Compile Include="SaleModels\SaleEdit.cs" />
     <Compile Include="SaleModels\SaleListItem.cs" />
+    <Compile Include="VisualizeDataModels\ProfitByCategoryListItem.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,7 +15,7 @@
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
-                url: '@Url.Action("VisualizeStudentResult", "VisualizeData")',
+                url: '@Url.Action("VisualizeResult", "SaleController")',
                 success: function (result) {
                     google.charts.load('current', {
                         'packages': ['corechart']
@@ -29,8 +29,8 @@
 
         function drawChart(result) {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Name');
-            data.addColumn('number', 'Marks Obtained');
+            data.addColumn('string', 'Platform');
+            data.addColumn('decimal', 'Sales');
             var dataArray = [];
 
             $.each(result, function (i, obj) {
