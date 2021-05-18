@@ -13,6 +13,7 @@ namespace ResaleDashboardMVC.Services
     public class VisualizeDataService
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
+        SaleServices saleServ = new SaleServices();
        
         
         public decimal profitFinder(SaleListItem saleEntity)
@@ -45,7 +46,7 @@ namespace ResaleDashboardMVC.Services
             //public List<SaleListItem> SaleIndex()
             int index = 0;
             decimal newTotal = 0;
-            List<SaleListItem> saleVisuals = SaleIndex();
+            List<SaleListItem> saleVisuals = saleServ.SaleIndex();
             List<PlatformSalesListItem> platformVisuals = new List<PlatformSalesListItem>();
             foreach(SaleListItem sale in saleVisuals)
             {
@@ -76,7 +77,7 @@ namespace ResaleDashboardMVC.Services
         {            
             int index = 0;
             decimal newProfit = 0;
-            List<SaleListItem> saleList = SaleIndex();
+            List<SaleListItem> saleList = saleServ.SaleIndex();
             List<ProfitByCategoryListItem> profitByCategoryVisuals = new List<ProfitByCategoryListItem>();
             foreach (SaleListItem sale in saleList)
             {                
