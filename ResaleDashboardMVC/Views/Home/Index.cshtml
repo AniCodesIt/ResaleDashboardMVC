@@ -21,27 +21,78 @@
         function drawChart() {
 
             // Create the data table.
-            var data = new google.visualization.DataTable();
+            var data = new google.visualization.DataTable();           ;
+            //data.addColumn('string', 'Category');
+            //data.addColumn('decimal', 'Profit');
+            var dataArray = [];
+
+            //$.each(result, function (i, obj) {
+            //    dataArray.push([obj.Category, obj.Profit]);
+            //});
+            //data.addRows(dataArray);
+
             data.addColumn('string', 'Platform');
             data.addColumn('number', 'Profit');
-            data.addRows([
-                ['Poshmark', 3],
-                ['Ebay', 1],
-                ['Mercari', 1],
-                ['Tradesy', 1],
-                
-            ]);
+              $.each(result, function (i, obj) {
+                dataArray.push([obj.Category, obj.Profit]);
+            });
+            data.addRows(dataArray);
+            //data.addRows([
+            //    ['Poshmark', 3],
+            //    ['Ebay', 2],
+            //    ['Mercari', 1],
+            //    ['Tradesy', 4],
+            //]);
+
+            var columnChartOptions = {
+                title: "Profit by Category",
+                width: 1000,
+                height: 400,
+              /*  pie: { groupWidth: "20%" },*/
+            };
+
+            //var columnChart = new google.visualization.PieChart(document
+            //    .getElementById('piechart_div'));
+
+            //columnChart.draw(data, columnChartOptions);
+
+
+            //data.addColumn('string', 'Platform');
+            //data.addColumn('number', 'Profit');
+            //data.addRows([
+            //    ['Poshmark', 3],
+            //    ['Ebay', 1],
+            //    ['Mercari', 1],
+            //    ['Tradesy', 1],
+
+            //]);
 
             // Set chart options
-            var options = {
-                'title': 'Sales By Plaform',
-                'width': 600,
-                'height': 500
-            };
+            //var options = {
+            //    'title': 'Sales By Platform',
+            //    'width': 600,
+            //    'height': 500
+            //};
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart'));
-            chart.draw(data, options);
+            chart.draw(data, columnChartOptions);
         }
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeResult", "VisualizeData")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
     </script>
 }

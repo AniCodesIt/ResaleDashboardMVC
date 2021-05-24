@@ -15,15 +15,27 @@ namespace ResaleDashboardMVC.Services
         private ApplicationDbContext _db = new ApplicationDbContext();
         public List<SaleListItem> SaleIndex()
         {
-            return _db.Sales.Select(e => new SaleListItem
             {
-                SaleID = e.SaleID,
-                PlatformID = e.PlatformID,
-                InvID = e.InvID,
-                SaleDate = e.SaleDate,
-                SalePrice = e.SalePrice,
-                Profit = e.Profit
-        }).ToList();
+
+            }
+            try
+            {
+                return _db.Sales.Select(e => new SaleListItem
+                {
+                    SaleID = e.SaleID,
+                    PlatformID = e.PlatformID,
+                    InvID = e.InvID,
+                    SaleDate = e.SaleDate,
+                    SalePrice = e.SalePrice,
+                    Profit = e.Profit
+                }).ToList();
+            }
+            catch (Exception err)
+            {
+                int a = 1;
+                string msg = err.Message;
+                return null;
+            }
         }
         public bool SaleCreate(SaleCreate model)
         {
@@ -122,7 +134,7 @@ namespace ResaleDashboardMVC.Services
             {
                 //index = platformVisuals.Find(p => p.PlatformID == sale.PlatformID)
                     index = platformVisuals.FindIndex(p => p.PlatformID == sale.PlatformID);
-                if (index == 0)
+                if (index == -1)
                 {
                     PlatformSalesListItem mp = new PlatformSalesListItem();
                     mp.PlatformID = sale.PlatformID;

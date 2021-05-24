@@ -16,7 +16,8 @@ namespace ResaleDashboardMVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                //this was originally controller "Home" and action "Index"
+                defaults: new { controller = "VisualizeData", action = "ColumnChart", id = UrlParameter.Optional }
             );
         }
     }

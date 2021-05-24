@@ -11,27 +11,27 @@ namespace ResaleDashboardMVC.Controllers
 {
     public class VisualizeDataController : Controller
     {
-
+        [HttpGet]
         public ActionResult ColumnChart()
         {
             return View();
         }
-
+        [HttpGet]
         public ActionResult PieChart()
         {
             return View();
         }
-
+        [HttpGet]
         public ActionResult LineChart()
         {
             return View();
         }
-
+        //[HttpGet]
         public ActionResult VisualizeResult()
         {
             return Json(Result(), JsonRequestBehavior.AllowGet);
         }
-
+        
         public List<PlatformSalesListItem> Result()
         {
             SaleServices srv = new SaleServices();
