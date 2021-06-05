@@ -32,11 +32,19 @@ namespace ResaleDashboardMVC.Controllers
             return Json(Result(), JsonRequestBehavior.AllowGet);
         }
         
-        public List<PlatformSalesListItem> Result()
+        public List<FakeFile> Result()
         {
             SaleServices srv = new SaleServices();
             List<PlatformSalesListItem> stdResult = srv.VisualizeSales();
+            List<FakeFile> fakerList = new List<FakeFile>();
+            foreach(var item in stdResult)
+            {
+                FakeFile faker = new FakeFile();
+                faker.PlatformID = item.PlatformID.ToString();
+                faker.SalePrice = item.SalePrice;
+                fakerList.Add(faker);             
 
+            }
             //stdResult.Add(new SaleListItem()
             //{
 
@@ -57,9 +65,7 @@ namespace ResaleDashboardMVC.Controllers
             //    stdName = "Tradesy",
             //    percentage = 15
             //});
-
-
-            return stdResult;
+            return fakerList;
         }
     }
 }

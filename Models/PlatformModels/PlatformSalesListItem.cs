@@ -11,4 +11,9 @@ namespace ResaleDashboardMVC.Models
         public int PlatformID { get; set; }
         public decimal SalePrice { get; set; }
     }
+    public class FakeFile
+    {
+        public string PlatformID { get; set; }
+        public decimal SalePrice { get; set; }
+    }
 }

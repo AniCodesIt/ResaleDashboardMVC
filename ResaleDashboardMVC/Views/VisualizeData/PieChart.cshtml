@@ -8,7 +8,7 @@
     <title>Result Visualization</title>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
             $.ajax({
@@ -30,19 +30,21 @@
         function drawChart(result) {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Platform');
-            data.addColumn('decimal', 'Sales');
+            data.addColumn('number', 'Sales');
             var dataArray = [];
 
             $.each(result, function (i, obj) {
-                dataArray.push([obj.stdName, obj.marksObtained]);
+              dataArray.push([obj.PlatformID, obj.SalePrice]);
+              
+
             });
             data.addRows(dataArray);
 
             var columnChartOptions = {
-                title: "Students Performance",
+                title: "Sales By...",
                 width: 1000,
                 height: 400,
-                bar: { groupWidth: "20%" },
+            
             };
 
             var columnChart = new google.visualization.PieChart(document

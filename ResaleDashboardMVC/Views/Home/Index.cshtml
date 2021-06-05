@@ -18,37 +18,22 @@
         // Callback that creates and populates a data table,
         // instantiates the pie chart, passes in the data and
         // draws it.
-        function drawChart() {
+        function drawChart(result) {
 
             // Create the data table.
-            var data = new google.visualization.DataTable();           ;
-            //data.addColumn('string', 'Category');
-            //data.addColumn('decimal', 'Profit');
+            var data = new google.visualization.DataTable();          
             var dataArray = [];
-
-            //$.each(result, function (i, obj) {
-            //    dataArray.push([obj.Category, obj.Profit]);
-            //});
-            //data.addRows(dataArray);
-
-            data.addColumn('string', 'Platform');
-            data.addColumn('number', 'Profit');
-              $.each(result, function (i, obj) {
-                dataArray.push([obj.Category, obj.Profit]);
+            data.addColumn('integer', 'PlatformID');
+            data.addColumn('decimal', 'SalePrice');
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.PlatformID, obj.SalePrice]);
             });
             data.addRows(dataArray);
-            //data.addRows([
-            //    ['Poshmark', 3],
-            //    ['Ebay', 2],
-            //    ['Mercari', 1],
-            //    ['Tradesy', 4],
-            //]);
 
             var columnChartOptions = {
                 title: "Profit by Category",
                 width: 1000,
                 height: 400,
-              /*  pie: { groupWidth: "20%" },*/
             };
 
             //var columnChart = new google.visualization.PieChart(document
@@ -83,6 +68,7 @@
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
+                //These hit the controller
                 url: '@Url.Action("VisualizeResult", "VisualizeData")',
                 success: function (result) {
                     google.charts.load('current', {
