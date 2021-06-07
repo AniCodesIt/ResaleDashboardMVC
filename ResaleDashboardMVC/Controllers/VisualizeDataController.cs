@@ -9,6 +9,7 @@ using ResaleDashboardMVC.Services;
 
 namespace ResaleDashboardMVC.Controllers
 {
+
     public class VisualizeDataController : Controller
     {
         [HttpGet]
@@ -35,12 +36,13 @@ namespace ResaleDashboardMVC.Controllers
         public List<FakeFile> Result()
         {
             SaleServices srv = new SaleServices();
-            List<PlatformSalesListItem> stdResult = srv.VisualizeSales();
+            VisualizeDataService vSrv = new VisualizeDataService();
             List<FakeFile> fakerList = new List<FakeFile>();
+            List<PlatformSalesListItem> stdResult = srv.VisualizeSales();
             foreach(var item in stdResult)
             {
                 FakeFile faker = new FakeFile();
-                faker.PlatformID = item.PlatformID.ToString();
+                faker.PlatformName = vSrv.platformNameFinder(item.PlatformID);
                 faker.SalePrice = item.SalePrice;
                 fakerList.Add(faker);             
 

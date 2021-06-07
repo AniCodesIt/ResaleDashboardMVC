@@ -72,6 +72,13 @@ namespace ResaleDashboardMVC.Services
             }
                 return platformVisuals;
         }
+        public string platformNameFinder(int ID)
+        {  
+            var platEntity = _db.Platforms.SingleOrDefault(e => e.PlatformID == ID);
+            var platName = platEntity.PlatformName;           
+
+            return platName;
+        }
         //Profit by Platform
         public List<ProfitByCategoryListItem> VisualizeProfitByCategory()
         {            

@@ -13,7 +13,7 @@ namespace ResaleDashboardMVC.Models
     }
     public class FakeFile
     {
-        public string PlatformID { get; set; }
+        public string PlatformName { get; set; }
         public decimal SalePrice { get; set; }
     }
 }
