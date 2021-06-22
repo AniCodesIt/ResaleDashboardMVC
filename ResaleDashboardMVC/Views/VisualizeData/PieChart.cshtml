@@ -63,19 +63,14 @@
             };
 
             var columnChart = new google.visualization.PieChart(document
-                .getElementById('piechart_div'));
+                .getElementById('SalesByPlatform_div'));
 
             columnChart.draw(data, columnChartOptions);
         }
     </script>
 
 
-
-    //////////
-
-
- 
-                    <script>
+      <script>
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
@@ -87,34 +82,34 @@
                         'packages': ['corechart']
                     });
                     google.charts.setOnLoadCallback(function () {
-                        drawChart(result);
+                        drawChart2(result);
                     });
                 }
             });
         });
 
-        function drawChart(result) {
+        function drawChart2(result) {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Platform');
+            data.addColumn('string', 'Category');
             data.addColumn('number', 'Sales');
             var dataArray = [];
 
             $.each(result, function (i, obj) {
-              dataArray.push([obj.PlatformName, obj.SalePrice]);
+              dataArray.push([obj.Category, obj.SalePrice]);
 
 
             });
             data.addRows(dataArray);
 
             var columnChartOptions = {
-                title: "Sales By Platform",
-                width: 500,
-                height: 400,
+                title: "Sales By Category",
+                width: 1000,
+                height: 800,
 
             };
 
             var columnChart = new google.visualization.PieChart(document
-                .getElementById('piechart_div'));
+                .getElementById('SalesByCategory_div'));
 
             columnChart.draw(data, columnChartOptions);
         }
@@ -122,7 +117,12 @@
     </head>
 <body>
     <h2>PieChart</h2>
-    <div id="piechart_div"></div>
+    <table class="columns">
+        <tr>
+            <td><div id="SalesByPlatform_div" style="border: 1px solid #ccc"></div></td>
+            <td><div id="SalesByCategory_div" style="border: 1px solid #ccc"></div></td>
+        </tr>
+    </table>
     <a href="PieChart" class="active btn btn-danger">Pie Chart</a>
     <a href="ColumnChart" class="btn btn-primary">Column Chart</a>
     <a href="LineChart" class="btn btn-warning">Line Chart</a>
