@@ -46,13 +46,30 @@ namespace ResaleDashboardMVC.Services
         {
             List<SaleListItem> saleList = saleServ.SaleIndex();
             List<CategorySalesListItem> newList = new List<CategorySalesListItem>();
+            int index = 0;
+            decimal newTotal = 0;
 
             foreach (var item in saleList)
             {
-                CategorySalesListItem catSaleListItem = new CategorySalesListItem();
-                catSaleListItem.Category = categoryFinder(item);
-                catSaleListItem.SalePrice = item.SalePrice;
-                newList.Add(catSaleListItem);
+                
+                var find = categoryFinder(item);
+                index = newList.FindIndex(p => p.Category == find); 
+
+                if (index < 0)
+                {
+                    CategorySalesListItem catSaleListItem = new CategorySalesListItem();
+                    catSaleListItem.Category = categoryFinder(item);
+                    catSaleListItem.SalePrice = item.SalePrice;
+                    newList.Add(catSaleListItem);
+                }
+                else
+                {              
+
+                    newTotal = newList[index].SalePrice + item.SalePrice;
+                    newList[index].SalePrice = newTotal;
+                }            
+               
+                
             }
             return newList;
         }
