@@ -25,6 +25,21 @@
                     });
                 }
             });
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeResult", "VisualizeData")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+
+            });
         });
 
         function drawChart(result) {
@@ -35,16 +50,16 @@
 
             $.each(result, function (i, obj) {
               dataArray.push([obj.PlatformName, obj.SalePrice]);
-              
+
 
             });
             data.addRows(dataArray);
 
             var columnChartOptions = {
-                title: "Sales By...",
+                title: "Sales By Platform",
                 width: 1000,
-                height: 400,
-            
+                height: 800,
+
             };
 
             var columnChart = new google.visualization.PieChart(document
@@ -53,7 +68,58 @@
             columnChart.draw(data, columnChartOptions);
         }
     </script>
-</head>
+
+
+
+    //////////
+
+
+ 
+                    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeCategoryResult", "VisualizeData")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
+
+        function drawChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Platform');
+            data.addColumn('number', 'Sales');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+              dataArray.push([obj.PlatformName, obj.SalePrice]);
+
+
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Sales By Platform",
+                width: 500,
+                height: 400,
+
+            };
+
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('piechart_div'));
+
+            columnChart.draw(data, columnChartOptions);
+        }
+                    </script>
+    </head>
 <body>
     <h2>PieChart</h2>
     <div id="piechart_div"></div>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ResaleDashboardMVC.Models;
 using Newtonsoft.Json;
 using ResaleDashboardMVC.Services;
+using Models.VisualizeDataModels;
 
 namespace ResaleDashboardMVC.Controllers
 {
@@ -68,6 +69,23 @@ namespace ResaleDashboardMVC.Controllers
             //    percentage = 15
             //});
             return fakerList;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult VisualizeCategoryResult()
+        {
+            return Json(CategoryResult(), JsonRequestBehavior.AllowGet);
+        }
+
+        public List<CategorySalesListItem> CategoryResult()
+        {
+            SaleServices srv = new SaleServices();
+            VisualizeDataService vSrv = new VisualizeDataService();
+            List<CategorySalesListItem> categoryList = new List<CategorySalesListItem>();
+            categoryList = vSrv.categorySalesFinder();          
+            return categoryList;
         }
     }
 }

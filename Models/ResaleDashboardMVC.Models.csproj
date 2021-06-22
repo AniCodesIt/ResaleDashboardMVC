@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VisualizeDataModels\CategorySalesListItem.cs" />
     <Compile Include="InventoryModels\InventoryDelete.cs" />
     <Compile Include="InventoryModels\InventoryEdit.cs" />
     <Compile Include="InventoryModels\InventoryCreate.cs" />

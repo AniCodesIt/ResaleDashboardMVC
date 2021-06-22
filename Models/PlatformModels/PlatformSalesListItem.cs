@@ -16,4 +16,6 @@ namespace ResaleDashboardMVC.Models
         public string PlatformName { get; set; }
         public decimal SalePrice { get; set; }
     }
+    
+
 }

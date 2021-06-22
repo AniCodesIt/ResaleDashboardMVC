@@ -12,6 +12,7 @@ namespace ResaleDashboardMVC.Controllers
     public class SaleController : Controller
     {
         SaleServices saleServ = new SaleServices();
+        PlatformServices platServ = new PlatformServices();
         // GET: Sale
         [HttpGet]
         ////[ValidateAntiForgeryToken]
@@ -24,7 +25,9 @@ namespace ResaleDashboardMVC.Controllers
         // Get: Sale/Create
         public ActionResult Create()
         {
-            return View();
+            List<PlatformListItem> listOfPlatforms = platServ.PlatformIndex();
+            
+            return View(listOfPlatforms);
         }
         //Post: Sale/Create
         [HttpPost]

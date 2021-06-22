@@ -1,4 +1,5 @@
 ﻿
+using Models.VisualizeDataModels;
 using ResaleDashboardMVC.Data;
 using ResaleDashboardMVC.Models;
 using System;
@@ -14,6 +15,7 @@ namespace ResaleDashboardMVC.Services
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
         SaleServices saleServ = new SaleServices();
+        
        
         
         public decimal profitFinder(SaleListItem saleEntity)
@@ -40,7 +42,24 @@ namespace ResaleDashboardMVC.Services
             string category = invEntity.Category;
             return category;
         }
-        //keep
+        public List<CategorySalesListItem> categorySalesFinder()
+        {
+            List<SaleListItem> saleList = saleServ.SaleIndex();
+            List<CategorySalesListItem> newList = new List<CategorySalesListItem>();
+
+            foreach (var item in saleList)
+            {
+                CategorySalesListItem catSaleListItem = new CategorySalesListItem();
+                catSaleListItem.Category = categoryFinder(item);
+                catSaleListItem.SalePrice = item.SalePrice;
+                newList.Add(catSaleListItem);
+            }
+            return newList;
+        }
+            
+            
+            
+            //keep
         public List<PlatformSalesListItem> VisualizeSales()
         {
             //public List<SaleListItem> SaleIndex()
