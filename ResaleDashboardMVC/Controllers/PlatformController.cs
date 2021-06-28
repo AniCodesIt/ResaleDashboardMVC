@@ -96,5 +96,11 @@ namespace ResaleDashboardMVC.Controllers
 
             return RedirectToAction("Index");
         }
+        [ActionName("PlatformDropdown")]
+        public ActionResult PlatformDropdown()
+        {
+            List<SelectListItem> platList = platServ.PlatformListDropdownData();
+            return View(platList);       
+        }
     }
 }

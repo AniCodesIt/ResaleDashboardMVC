@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ResaleDashboardMVC.Data;
+using System.Web.Mvc;
 
 namespace ResaleDashboardMVC.Services
 {
@@ -86,6 +87,32 @@ namespace ResaleDashboardMVC.Services
             _db.Platforms.Remove(entity);
             return _db.SaveChanges() == 1;
         }
+        //Creates the data for the dropdown ilst
+        public List<SelectListItem> PlatformListDropdownData()
+        {
+            //call the index
+            List<PlatformListItem> platformDropdownData = PlatformIndex();
+
+            //New up a list
+            List<SelectListItem> dataHolder = new List<SelectListItem>();           
+
+            //fill list with select list items from index
+            foreach(var item in platformDropdownData)
+            {
+                //New it up
+                SelectListItem platformDropdown = new SelectListItem();
+                //push date
+                platformDropdown.Text = item.PlatformName;
+                platformDropdown.Value = item.PlatformID.ToString();
+                //add to the new list
+                dataHolder.Add(platformDropdown);
+            }
+            return dataHolder;
+
+        }
+
+
+
 
     }
 }
