@@ -26,8 +26,8 @@ namespace ResaleDashboardMVC.Controllers
         public ActionResult Create()
         {
             List<PlatformListItem> listOfPlatforms = platServ.PlatformIndex();
-            
-            return View(listOfPlatforms);
+            ViewBag.listOfPlatforms = listOfPlatforms;
+            return View();
         }
         //Post: Sale/Create
         [HttpPost]

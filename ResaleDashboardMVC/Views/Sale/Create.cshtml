@@ -20,7 +20,8 @@
             <div class="col-md-10">
                 @*@Html.EditorFor(model => model.PlatformID, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.PlatformID, "", new { @class = "text-danger" })*@
-                @Html.DropDownList("Platform Name", new SelectList(ViewBag.data, "Platform Name", "Platform"))
+                @*@Html.DropDownList("Platform Name", new SelectList(ViewBag.listOfPlatforms, "PlatformID", "PlatformName"))*@
+                @Html.DropDownListFor(model => model.PlatformID, new SelectList(ViewBag.listOfPlatforms, "PlatformID", "PlatformName"))
             </div>
         </div>
         <hr />

@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ResaleDashboardMVC.Models
 {
     public class SaleCreate
-    {     
+    {
         public int PlatformID { get; set; }
+       
         public int InvID { get; set; }
         public DateTime SaleDate { get; set; }
         public decimal SalePrice { get; set; }        
